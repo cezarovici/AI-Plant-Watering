@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    margin: 10px 0;
+    color: #666;
+}
+
+#temperature {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#ai-comments {
+    width: 40%;
+    margin-left: 20px;
+    float: right;
+}
+
+#ai-avatar {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.ai-comment {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.ai-comment img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+/* Stilurile anterioare pentru butoane */
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-success {
+    background-color: #28a745;
+}

@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="data">
+      <h1>Live Data from Pico W</h1>
+      <p>IP Address: <%= ip %></p>
+      <p>Processor Temperature: <span id="temperature"><%= data.temperatura %></span> °C</p>
+      <% if (typeof outsideTemperature !== 'undefined') { %>
+          <p>Outside Temperature: <%= outsideTemperature %> °C</p>
+      <% } else { %>
+          <p>Outside Temperature data not available</p>
+      <% } %>
+      <% if (typeof soilHumidity !== 'undefined') { %>
+          <p>Soil Humidity: <%= soilHumidity %> %</p>
+      <% } else { %>
+          <p>Soil Humidity data not available</p>
+      <% } %>
+      <% if (typeof waterLevel !== 'undefined') { %>
+          <p>Water Level: <%= waterLevel %> %</p>
+      <% } else { %>
+          <p>Water Level data not available</p>
+      <% } %>
+  </div>
+
+  <img id="ai-avatar" src="https://cdn.icon-icons.com/icons2/665/PNG/512/robot_icon-icons.com_60269.png" alt="AI Avatar">
+
+  <!-- Comentariile AI-ului -->
+  <div id="ai-comments">
+      <!-- Comentariile AI vor fi afișate aici -->
+      <%= aiResponse %>
+  </div>
+
+  <!-- Formularele -->
+  <div class="forms">
+      <form action="/ledon" method="get">
+          <% if (typeof data.stareLED !== 'undefined' && data.stareLED === 'on') { %>
+              <button type="submit" class="btn btn-primary" disabled>Turn LED On</button>
+          <% } else { %>
+              <button type="submit" class="btn btn-primary">Turn LED On</button>
+          <% } %>
+      </form>
+
+      <form action="/ledoff" method="get">
+          <% if (typeof data.stareLED !== 'undefined' && data.stareLED === 'off') { %>
+              <button type="submit" class="btn btn-danger" disabled>Turn LED Off</button>
+          <% } else { %>
+              <button type="submit" class="btn btn-danger">Turn LED Off</button>
+          <% } %>
+      </form>
+
+      <form action="/udaplanta" method="get">
+          <button type="submit" class="btn btn-success">Udă planta</button>
+      </form>
+  </div>
+</div>
